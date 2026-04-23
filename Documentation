@@ -1,0 +1,458 @@
+1. Problem Statement
+College students struggle to manage multiple assignments, deadlines, and study sessions across different courses, 
+leading to missed deadlines and increased academic stress. Existing task management apps are either too complex for
+quick task entry or lack features tailored to academic workflows. StudyMate addresses this by providing a simple, 
+student-focused task manager that organizes assignments by course, tracks deadlines, and sends timely reminders—helping
+students stay on top of their academic responsibilities without overwhelming them with unnecessary features.
+
+2. User Research (Simulated)
+Participants Profile
+Sarah, 19 - Freshman, Biology major, uses phone for everything, struggles with paper planners
+Marcus, 21 - Junior, Computer Science, currently uses sticky notes and Google Calendar
+Priya, 20 - Sophomore, Business, juggles 5 courses + part-time job
+Chen, 22 - Senior, Engineering, needs visual deadline tracking
+Aaliyah, 18 - Freshman, English major, new to college workload management
+Jake, 20 - Sophomore, History, forgets to check planner apps regularly
+Emma, 21 - Junior, Psychology, wants course-specific organization
+David, 19 - Freshman, Math major, overwhelmed by multiple assignment types
+Key Insights
+Insight 1: Students want to add tasks in under 30 seconds—long forms cause app abandonment
+Insight 2: 7 out of 8 participants organize tasks by course/class rather than by date alone
+Insight 3: Visual deadline indicators (color-coding for urgency) are preferred over just dates
+Insight 4: Students check their phones 50+ times daily—micro-interactions matter more than desktop sync
+Insight 5: Push notifications are essential, but students want granular control (per-course settings)
+3. User Persona
+Meet Alex Rivera
+Demographics:
+
+Age: 20 years old
+Year: Sophomore
+Major: Communications
+Location: Lives on campus, moderate tech proficiency
+Goals:
+
+Submit all assignments on time without last-minute panic
+Balance coursework across 4 classes with different assignment types
+Reduce anxiety about "What am I forgetting?"
+Spend less time organizing and more time actually studying
+Pain Points:
+
+Paper planners get lost; forgets to check them
+Generic to-do apps don't capture course names or assignment types
+Misses deadlines because tasks blend together visually
+Notification overload from multiple apps causes alert fatigue
+Behavior Patterns:
+
+Checks phone between classes (5–10 minute windows)
+Adds tasks immediately when professors announce them
+Prefers simple interfaces—won't use apps with learning curves
+Wants quick visual confirmation that a task was saved
+Quote: "I just need to brain-dump my assignments fast and know I won't forget them. I don't have time to categorize things perfectly."
+
+4. User Flow: Adding a New Task
+Start: User opens StudyMate app
+
+Step 1: User sees Home screen with existing tasks and prominent "+" button
+
+Step 2: User taps "+" button
+
+Step 3: Add Task screen appears with minimal form fields
+
+Step 4: User enters task title (e.g., "Essay draft")
+
+Step 5: User selects course from dropdown (e.g., "English 202")
+
+Step 6: User picks due date using date picker
+
+Step 7: (Optional) User adds brief notes or selects priority level
+
+Step 8: User taps "Save Task" button
+
+Step 9: System validates input and saves task
+
+Step 10: Confirmation appears (brief animation or checkmark)
+
+Step 11: User returns to Home screen where new task is visible in list
+
+End: User sees updated task list, feels confident task is saved
+
+Alternative Flow: User taps "Cancel" at Step 8 → Returns to Home without saving
+
+5. Low-Fidelity Wireframes (Detailed Descriptions)
+Screen 1: Splash/Login Screen
+Layout:
+
+Top two-thirds: App branding area
+Bottom third: Action buttons
+Elements & Placement:
+
+Centered in upper area: App name "StudyMate" in large, simple sans-serif font
+Below app name: Tagline "Your academic task companion" in smaller text
+Icon placeholder: Simple book or checklist symbol above app name
+Bottom area: Two rectangular buttons stacked vertically
+Button 1: "Login" (outlined rectangle)
+Button 2: "Sign Up" (filled rectangle, darker)
+Footer: Small text "v1.0" centered at very bottom
+Visual Notes:
+
+Black text on white background
+Grey border for "Login" button
+Dark grey fill for "Sign Up" button
+Ample whitespace—minimalist approach
+Screen 2: Home Screen (Task List)
+Layout:
+
+Top bar: Header with app name and settings icon
+Main area: Scrollable task list
+Bottom: Floating action button
+Elements & Placement:
+
+Header (fixed at top):
+
+Left: "StudyMate" text or small logo
+Right: Gear/settings icon (simple circle with three dots or gear symbol)
+Grey line separator below header
+Main Content Area:
+
+If tasks exist: List of task cards, stacked vertically
+Each task card contains:
+Left edge: Thin vertical line (priority indicator—different grey shades)
+Top line: Task title in bold
+Second line: Course name in smaller text
+Third line: Due date in smallest text with calendar icon
+Right edge: Checkbox outline (to mark complete)
+Grey border around entire card
+White background inside card
+Cards separated by thin grey dividers
+Example Task Card:
+
+┌─────────────────────────────┐
+│ █ Essay Draft - Revision    │
+│   ENG 202                   │
+│   📅 Due: Apr 25           ☐│
+└─────────────────────────────┘
+Empty State (if no tasks):
+
+Center of screen: Simple illustration placeholder (e.g., empty box outline)
+Below: Text "No tasks yet. Tap + to add one!"
+Floating Action Button:
+
+Bottom right corner: Large circular button
+Contains: "+" symbol in center
+Dark grey circle with white "+" sign
+Slight shadow effect (indicated by second grey outline)
+Screen 3: Add Task Screen
+Layout:
+
+Top bar: Back button and screen title
+Main area: Form fields stacked vertically
+Bottom: Action buttons
+Elements & Placement:
+
+Header:
+
+Left: "< Back" or back arrow
+Center: "Add New Task" title
+Grey separator line
+Form Fields (stacked with spacing):
+
+Task Title Field:
+
+Label: "Task Name*" in small text above
+Input box: Large rectangle with light grey border
+Placeholder text inside: "e.g., Read Chapter 5"
+Course Selection:
+
+Label: "Course*"
+Dropdown selector: Rectangle with downward arrow on right
+Shows: "Select course..." as placeholder
+Due Date:
+
+Label: "Due Date*"
+Date picker field: Rectangle with calendar icon on left
+Shows: "MM/DD/YYYY" format or selected date
+Priority (Optional):
+
+Label: "Priority"
+Three radio buttons horizontal:
+○ Low ○ Medium ○ High
+Medium selected by default
+Notes (Optional):
+
+Label: "Additional Notes"
+Larger text box (3-4 lines tall)
+Placeholder: "Any extra details..."
+Bottom Buttons:
+
+Two buttons at bottom, side by side:
+Left button: "Cancel" (outlined, light grey)
+Right button: "Save Task" (filled, dark grey)
+Visual Notes:
+
+Required fields marked with asterisk (*)
+Simple, clear labels
+Adequate spacing between fields (thumb-friendly)
+Form fills about 70% of screen height
+Screen 4: Task Confirmation/Updated Home
+Layout:
+
+Same as Home Screen (Screen 2)
+Shows brief confirmation feedback
+Elements & Placement:
+
+Home screen layout (as described in Screen 2)
+New task now appears in task list (at top if sorted by date added)
+Brief confirmation indicator:
+Top of screen: Small banner/toast notification
+Contains: Checkmark icon + "Task added successfully"
+Light grey background, auto-dismisses after 2 seconds
+OR simple checkmark animation over the new task card
+Visual Notes:
+
+Draw attention to newly added task with subtle highlight (slightly darker border temporarily)
+Otherwise identical to Home Screen
+Screen 5: Update/Edit Task Screen
+Layout:
+
+Nearly identical to Add Task Screen (Screen 3)
+Pre-filled with existing task data
+Elements & Placement:
+
+Header:
+
+Left: "< Back" arrow
+Center: "Edit Task" title
+Right: Trash icon (for delete option)
+Form Fields:
+
+Same form layout as Add Task screen
+All fields pre-populated with current task information
+Task title field shows existing title
+Course dropdown shows currently selected course
+Due date shows current date
+Priority shows current selection
+Notes show existing notes if any
+Bottom Buttons:
+
+Left: "Cancel" (outlined)
+Center: "Delete Task" (outlined, with warning icon)
+Right: "Update Task" (filled, dark grey)
+Delete Confirmation (if trash/delete tapped):
+
+Modal overlay appears:
+Centered box with white background, grey border
+Text: "Delete this task?"
+Subtext: "This cannot be undone"
+Two buttons:
+"Cancel" (outlined)
+"Delete" (filled, dark grey or red accent)
+Screen 6: Settings Screen (Optional)
+Layout:
+
+Top bar: Back button and title
+Main area: Settings list
+Elements & Placement:
+
+Header:
+
+Left: "< Back" arrow
+Center: "Settings" title
+Settings List (grouped sections):
+
+Account Section:
+
+Grey section header: "ACCOUNT"
+List items (each a rectangle with text):
+"Profile" (with > arrow on right)
+"Email: alex.rivera@email.com" (smaller, grey text)
+"Change Password" (with > arrow)
+Grey divider lines between items
+Notifications Section:
+
+Grey section header: "NOTIFICATIONS"
+Toggle switches (each line):
+"Push Notifications" [Toggle: ON/OFF]
+"Email Reminders" [Toggle: ON/OFF]
+"Reminder Time: 1 day before" (with > arrow)
+Preferences Section:
+
+Grey section header: "PREFERENCES"
+"Default Priority: Medium" (with > arrow)
+"Sort Tasks By: Due Date" (with > arrow)
+Footer:
+
+Bottom: "Log Out" button (outlined, centered)
+Version number: "Version 1.0" in tiny grey text
+6. Figma Design Instructions (Step-by-Step)
+Getting Started in Figma
+Step 1: Set Up Your File
+
+Open Figma and create new file: "StudyMate Wireframes"
+Click "Frame" tool (shortcut: F) in top toolbar
+Select "Phone" category from right panel
+Choose "iPhone 14 Pro" or "Android Large" (390 x 844 px is common)
+Create 6 frames total, one for each screen
+Name each frame clearly: "1-Splash", "2-Home", "3-AddTask", "4-Confirmation", "5-EditTask", "6-Settings"
+Step 2: Set Up Your Color Palette
+
+Create a small "Style Guide" frame to the left
+Add three rectangles:
+White (#FFFFFF) - backgrounds
+Light Grey (#E5E5E5) - borders, inactive elements
+Dark Grey (#333333) - text, active buttons
+Save these as color styles: Right-click rectangle → Create Style → name it
+Step 3: Basic Tools You'll Use
+
+Rectangle Tool (R):
+
+Use for buttons, input fields, cards, containers
+Draw rectangle → adjust corner radius in right panel (0–10px for sharp to slightly rounded)
+Text Tool (T):
+
+Click to add text
+Set font to system default (Inter, Roboto, or Arial)
+Font sizes: 24px (headings), 16px (body), 14px (labels), 12px (subtext)
+Line Tool (L):
+
+Create dividers and borders
+Set stroke weight: 1px for subtle lines, 2px for emphasis
+Ellipse Tool (O):
+
+Use for circular buttons, icons, radio buttons
+Hold Shift while dragging to create perfect circles
+Step 4: Build Screen 1 (Splash/Login)
+
+Select "1-Splash" frame
+Add app name:
+Press T, click in upper-center area
+Type "StudyMate", set to 32px, bold, dark grey
+Add tagline:
+Below app name, 16px, regular weight, medium grey
+Type "Your academic task companion"
+Add icon placeholder:
+Press O, draw 80x80px circle above app name
+Add border, no fill
+Inside circle: Draw simple shapes (book or checkmark) using Rectangle/Line tools
+Add buttons at bottom:
+Press R, draw rectangle (300px wide, 48px tall)
+Center horizontally
+Add text: "Login" centered in button
+Duplicate (Cmd/Ctrl + D), move below
+Change text to "Sign Up", fill with dark grey
+Add version text at very bottom (12px, light grey)
+Step 5: Build Screen 2 (Home)
+
+Select "2-Home" frame
+Create header:
+Draw rectangle across top (full width, 60px tall)
+Add text "StudyMate" on left (20px from edge)
+Add circle on right for settings icon (32x32px), add three dots inside
+Draw 1px line below header
+Create task cards:
+Draw rectangle (340px wide, 80px tall, 8px corner radius)
+Position 20px from left edge, below header
+Add thin stroke (1px, light grey)
+Inside card:
+Add vertical line on left edge (3px wide, colored dark grey for priority)
+Add text (bold, 16px): "Essay Draft - Revision"
+Below: smaller text (14px, grey): "ENG 202"
+Below: smallest text (12px, grey): "📅 Due: Apr 25"
+Right side: Draw square for checkbox (20x20px, just outline)
+Duplicate card (Cmd/Ctrl + D) for 3-4 more tasks
+Change text content for variety
+Space cards 12px apart vertically
+Add floating action button:
+Draw circle (56x56px) in bottom-right corner
+Fill with dark grey
+Add "+" symbol using Text tool (white, 32px, centered)
+Draw second circle slightly offset (shadow effect)
+Step 6: Build Screen 3 (Add Task)
+
+Select "3-AddTask" frame
+Create header:
+Add "< Back" text top-left
+Add "Add New Task" centered (16px, bold)
+Draw separator line
+Create form fields (start 80px from top, space 20px apart):
+Task Name:
+Add label text: "Task Name*" (12px, grey)
+Draw rectangle below (340px wide, 48px tall, light grey border)
+Inside: add placeholder text (14px, light grey): "e.g., Read Chapter 5"
+Course:
+Add label: "Course*"
+Draw rectangle (same size)
+Add text: "Select course..." (placeholder)
+Add small downward triangle on right (use Line tool, draw V shape)
+Due Date:
+Add label: "Due Date*"
+Draw rectangle
+Add calendar icon (draw small square grid with Line tool)
+Add text: "MM/DD/YYYY"
+Priority:
+Add label: "Priority"
+Draw three circles horizontally (20x20px each, 40px apart)
+Add labels: "Low", "Medium", "High" next to each
+Fill middle circle to show selection
+Notes:
+Add label: "Additional Notes"
+Draw taller rectangle (100px tall)
+Add placeholder text: "Any extra details..."
+Add bottom buttons:
+Draw two rectangles side-by-side (each 160px wide, 48px tall)
+Left: "Cancel" (outline only)
+Right: "Save Task" (dark grey fill)
+Step 7: Build Remaining Screens
+
+Screen 4 (Confirmation): Duplicate Screen 2, add small banner at top with checkmark + "Task added successfully"
+Screen 5 (Edit Task): Duplicate Screen 3, change title to "Edit Task", add trash icon, add "Delete" button
+Screen 6 (Settings): Use Rectangle and Text tools to create list items with section headers
+Step 8: Add Annotations (Optional but Helpful)
+
+Create new layer above all frames
+Use Text tool to add notes:
+Label interactive elements: "Tap to add task"
+Explain states: "Checkbox - empty state"
+Note sizes: "48px tap target for accessibility"
+Draw arrows (Line tool) connecting annotations to elements
+Step 9: Organize Your Layers
+
+In left panel, rename all layers clearly:
+"Header Bar", "Task Card 1", "Add Button", etc.
+Group related elements:
+Select multiple items (Shift + Click)
+Right-click → Group Selection (Cmd/Ctrl + G)
+Name groups: "Header Group", "Form Fields Group"
+Step 10: Final Polish
+
+Align elements properly:
+Select items → Right panel → use alignment tools
+Check consistent spacing (use spacebar to measure)
+Ensure all text is readable:
+Check contrast (dark text on white, white text on dark)
+Make sure tap targets are at least 44x44px (accessibility standard)
+Review all frames - zoom out to see full flow
+7. Design Thinking Process (Brief)
+Empathize
+Conduct interviews or observations to understand student behaviors around task management—watch when they write down assignments, 
+note their frustrations, and listen for the language they use to describe academic workload. Simulated research (like the interviews above) 
+helps you step into users' shoes and identify real pain points rather than assumed problems.
+
+Define
+Synthesize research findings into a clear problem statement that captures WHO is affected (college students),
+ WHAT they struggle with (managing academic deadlines), and WHY current solutions fail (too complex or not tailored to academic context). 
+Your persona (Alex) should embody these insights in a memorable, human way.
+
+Ideate
+Sketch multiple solutions quickly without judgment—consider different ways to organize tasks
+  (by course, by date, by priority), various input methods (quick-add, voice, template), and notification strategies. 
+Low-fidelity wireframes let you explore ideas rapidly before committing to detailed design.
+
+Prototype
+Create clickable wireframes in Figma by linking frames together (use Prototype mode: drag from button to 
+next screen)—this allows you to test the core flow (adding a task) without building actual code. Keep it simple: 
+just connect the "+" button to the Add Task screen, then "Save" back to Home.
+
+Test
+Share your prototype with 3-5 target users (classmates, study partners) and ask them to complete one task:
+  "Add an assignment for English class due next Friday"—observe where they hesitate, what they tap that isn't interactive, 
+  and what confuses them. One round of testing will reveal clarity issues in your wireframes that you can fix before final submission.
